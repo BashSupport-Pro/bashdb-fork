@@ -149,6 +149,7 @@ output to go to STDOUT.
 List of info subcommands:
 -------------------------
 info args -- Argument variables (e.g. $1, $2, ...) of the current stack frame.
+info args_current -- Current values of variables $1, $2, ... of the current stack frame.
 info breakpoints -- Status of user-settable breakpoints
 info display -- Show all display expressions
 info files -- Source files in the program
@@ -162,9 +163,9 @@ info variables -- All global and static variable names
 info warranty -- Various kinds of warranty you do not have
 +info 
 Info subcommands are:
-  args         files      line     source     warranty   
+  args         display    handle   signals  variables
+  args_current     files      line     source   warranty
   breakpoints  functions  program  stack      watchpoints
-  display      handle     signals  variables
 +#### history...
 +H 
 28: info 
@@ -220,6 +221,7 @@ help info
 List of info subcommands:
 -------------------------
 info args -- Argument variables (e.g. $1, $2, ...) of the current stack frame.
+info args_current -- Current values of variables $1, $2, ... of the current stack frame.
 info breakpoints -- Status of user-settable breakpoints
 info display -- Show all display expressions
 info files -- Source files in the program
@@ -273,6 +275,7 @@ help info
 List of info subcommands:
 -------------------------
 info args -- Argument variables (e.g. $1, $2, ...) of the current stack frame.
+info args_current -- Current values of variables $1, $2, ... of the current stack frame.
 info breakpoints -- Status of user-settable breakpoints
 info display -- Show all display expressions
 info files -- Source files in the program
