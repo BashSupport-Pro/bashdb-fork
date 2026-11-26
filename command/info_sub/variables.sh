@@ -94,7 +94,7 @@ function _Dbg_do_info_variables() {
         if [[ $_Dbg_var_line =~ ^([^=]+)=(.*)$ ]]; then
             _Dbg_var_values["${BASH_REMATCH[1]}"]="${BASH_REMATCH[2]}"
         fi
-    done < <(declare)
+    done < <(declare 2>/dev/null)
 
     declare _Dbg_var_flags _Dbg_var_name
     if [[ $_Dbg_typeset_filtered -eq 0 ]]; then
