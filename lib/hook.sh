@@ -119,9 +119,12 @@ _Dbg_debug_trap_handler() {
 
     _Dbg_save_args "$@"
 
+    # BashSupport Pro: Use the filename of the frame, which is resolved against the current
+    # working directory, and only remember absolute names. A relative name depends
+    # on the working directory at the time the file was sourced.
     typeset _Dbg_full_filename
-    _Dbg_full_filename="$(_Dbg_is_file "${BASH_SOURCE[1]}")"
-    if [[ -r "$_Dbg_full_filename" ]] ; then
+    _Dbg_full_filename="$(_Dbg_is_file "$_Dbg_frame_last_filename")"
+    if [[ -r "$_Dbg_full_filename" && ${BASH_SOURCE[1]:0:1} == '/' ]] ; then
 	_Dbg_file2canonic["${BASH_SOURCE[1]}"]="$_Dbg_full_filename"
     fi
 
